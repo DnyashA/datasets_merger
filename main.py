@@ -1,6 +1,12 @@
+import time
+
+from PathContainer import PathContainer
 from Merger import Merger
 
 if __name__ == '__main__':
-    m = Merger("/media/dnyasha/My Passport/Datasets/", "/media/dnyasha/My Passport/Datasets/", "candidates.csv", "MSKCC RepeatCT Lesion notes for RIDER(reproceed).csv",
-               "/media/dnyasha/My Passport/Test/", split=True)
+    default_pathes = PathContainer()
+    m = Merger(default_pathes.pathes(), split=True)
+    start = time.time()
     m.merge()
+    finish = time.time()
+    print("Merging have been lasted for {0} seconds".format(finish-start))
