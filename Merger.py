@@ -57,6 +57,7 @@ class Merger(object):
 
 
     def merge(self):
+        self.collect_csv()
         main_dataset = pd.DataFrame(self.main_data[1:], columns=self.main_data[0])
         main_dataset = main_dataset.loc[:, ~main_dataset.columns.duplicated()]
         sub_dataset = pd.DataFrame(self.sub_data[1:], columns=self.sub_data[0])
