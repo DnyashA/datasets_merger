@@ -27,6 +27,8 @@ class Merger(object):
         self.split = split
         self.main_data = []
         self.sub_data = []
+        self.main_cts = []
+        self.sub_cts = []
 
         if not os.path.exists(self.save_path):
             os.makedirs(str(self.save_path))
@@ -50,9 +52,8 @@ class Merger(object):
 
     def collect_ct(self):
         # CT's extension have to be specified (usualy it's .raw or .dicom)
-        main_cts = glob.glob(str(self.main_dataset_path) + '**/*.raw', recursive=True)
-        sub_cts = glob.glob(str(self.sub_dataset_path) + '**/*.raw', recursive=True)
-        return main_cts, sub_cts
+        self.main_cts = glob.glob(str(self.main_dataset_path) + '**/*.raw', recursive=True)
+        self.sub_cts = glob.glob(str(self.sub_dataset_path) + '**/*.raw', recursive=True)
 
 
     def merge(self):
@@ -62,10 +63,9 @@ class Merger(object):
         sub_dataset = sub_dataset.loc[:, ~sub_dataset.columns.duplicated()]
         result_dataset = main_dataset.append(sub_dataset, ignore_index=True)
         pd.DataFrame.to_csv(result_dataset, str(self.save_path) + 'csv_files/result_dataset.csv')
-        main_cts, sub_cts = self.collect_ct()
-        for path in main_cts:
+        for path in self.main_cts:
             shutil.copy(path, str(self.save_path) + 'images')
-        for path in sub_cts:
+        for path in self.sub_cts:
             shutil.copy(path, str(self.save_path) + 'images')
 
         if self.shuffle:
