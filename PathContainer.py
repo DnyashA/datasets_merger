@@ -38,7 +38,6 @@ class PathContainer(object):
                   pref_enum.sub_markup: self.pathes[3],
                   pref_enum.save_path: self.pathes[4]}
 
-
     def get_pathes(self):
         if self.data_is_ok:
             return self._convert_pathes(DefaultPathes)
