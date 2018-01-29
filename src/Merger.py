@@ -1,13 +1,14 @@
+import csv
 import glob
 import os
-
-import csv
-import pandas as pd
-import numpy as np
 import shutil
 
-from PathContainer import DefaultPathes as def_pt
-from Splitter import Splitter
+import numpy as np
+import pandas as pd
+
+from src.PathContainer import DefaultPathes as def_pt
+from src.Splitter import Splitter
+
 
 class Merger(object):
 

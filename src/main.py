@@ -1,7 +1,8 @@
 import time
 
 from PathContainer import PathContainer
-from Merger import Merger
+
+from src.Merger import Merger
 
 if __name__ == '__main__':
     default_pathes = PathContainer()
