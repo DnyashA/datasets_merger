@@ -3,7 +3,6 @@ import numpy as np
 
 
 class Splitter:
-
     @staticmethod
     def split(test_percent, dataset, columns):
         np.random.shuffle(dataset)

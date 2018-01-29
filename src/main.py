@@ -10,4 +10,4 @@ if __name__ == '__main__':
     start = time.time()
     m.merge()
     finish = time.time()
-    print("Merging have been lasted for {0} seconds".format(finish-start))
+    print("Merging have been lasted for {0} seconds".format(finish - start))

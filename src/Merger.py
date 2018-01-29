@@ -11,7 +11,6 @@ from src.Splitter import Splitter
 
 
 class Merger(object):
-
     def __init__(self, pathes, npy=False, shuffle=False, split=False):
         # Path to standard dataset
         self.main_dataset_path = pathes[def_pt.main_dat_path]
