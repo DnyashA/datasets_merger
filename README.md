@@ -35,7 +35,7 @@ So just type "docker build" in the project folder
 
 ## Built With
 
-* [Docker] (https://docs.docker.com/install/)
+* [Docker](https://docs.docker.com/install/)
 
 ## Contributing
 
