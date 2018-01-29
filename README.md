@@ -1,56 +1,32 @@
 # Project Title
 
-One Paragraph of project description goes here
+This program is easy-to-setup multithread dataset merger - you should give 2 datasets, make manual calibration and get back 1 merged dataset
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
+To start the program you have to clone the repository
 ```
-Give examples
+git clone https://github.com/DnyashA/datasets_merger
 ```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
+create ditectory "data" in the project and put your data there
 ```
-Give the example
+cd datasets_merger
+mkdir data
+cp *your files* ./data
 ```
-
-And repeat
-
+create a docker image
 ```
-until finished
+docker build .
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+run the container. It will make all other things automatically
 ```
-Give an example
+docker run *your image name*
 ```
+tip - use "docker images" to find image id
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+One more moment:
+Before applying our code to your data, it'll be better to read it and add your own data handler
+This process is still manual
 
 ## Deployment
 
