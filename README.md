@@ -1,4 +1,4 @@
-# Project Title
+# dataset merger
 
 This program is easy-to-setup multithread dataset merger - you should give 2 datasets, make manual calibration and get back 1 merged dataset
 
